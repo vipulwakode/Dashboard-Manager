@@ -2,10 +2,11 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
 import useSearch from "../hooks/useSearch";
+import { FiX } from "react-icons/fi";
 
 const SearchBarContainer = styled.div`
   display: flex;
-  width: 70%;
+  width: 60%;
   align-items: center;
   background-color: white;
   border-radius: 1rem;
@@ -30,6 +31,13 @@ const SearchIcon = styled(FaSearch)`
   color: gray;
 `;
 
+const CloseIcon = styled(FiX)`
+  cursor: pointer;
+  color: #333;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+`;
+
 const SearchBar = () => {
   const { searchTerm, handleSearch } = useSearch();
 
@@ -42,6 +50,7 @@ const SearchBar = () => {
         placeholder="Search widgets..."
         onChange={(e) => handleSearch(e.target.value)}
       />
+      {searchTerm && <CloseIcon onClick={() => handleSearch("")} />}
     </SearchBarContainer>
   );
 };
