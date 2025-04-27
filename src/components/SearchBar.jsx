@@ -1,6 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
+import useSearch from "../hooks/useSearch";
 
 const SearchBarContainer = styled.div`
   display: flex;
@@ -30,10 +31,17 @@ const SearchIcon = styled(FaSearch)`
 `;
 
 const SearchBar = () => {
+  const { searchTerm, handleSearch } = useSearch();
+
   return (
     <SearchBarContainer>
       <SearchIcon />
-      <Input type="text" placeholder="Search widgets" />
+      <Input
+        value={searchTerm}
+        type="text"
+        placeholder="Search widgets..."
+        onChange={(e) => handleSearch(e.target.value)}
+      />
     </SearchBarContainer>
   );
 };

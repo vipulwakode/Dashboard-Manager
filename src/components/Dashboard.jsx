@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
-import { BiCategory } from "react-icons/bi";
 import Category from "./Category";
 import Footer from "./Footer";
 import { useSelector } from "react-redux";
@@ -21,7 +20,7 @@ const CategoryContainer = styled.div`
 
 const Dashboard = () => {
   const categories = useSelector((state) => state.dashboard.categories);
-  console.log(categories, "categories from redux store");
+
   return (
     <Container>
       <Header />

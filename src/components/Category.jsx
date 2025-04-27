@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Widget from "./widget";
 import { FaPlus } from "react-icons/fa";
 import AddWidgetModal from "./AddWidgetModal";
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
   display: grid;
@@ -58,12 +59,22 @@ const AddButton = styled.button`
 
 const Category = ({ category }) => {
   const [showAddWidgetModal, setShowAddWidgetModal] = useState(false);
+  const searchTerm = useSelector((state) => state.dashboard.searchTerm);
+
+  const filteredWidgets = searchTerm
+    ? category.widgets.filter(
+        (widget) =>
+          widget.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          widget.content.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : category.widgets;
+
   return (
     <>
       <CategoryContainer>
         <CategoryTitle>{category.name}</CategoryTitle>
         <Container>
-          {category.widgets.map((widget) => (
+          {filteredWidgets.map((widget) => (
             <Widget key={widget.id} widget={widget} categoryId={category.id} />
           ))}
           <WidgetCard>
