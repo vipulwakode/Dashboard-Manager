@@ -6,8 +6,15 @@ import AddWidgetModal from "./AddWidgetModal";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const CategoryContainer = styled.div`
@@ -57,7 +64,7 @@ const Category = ({ category }) => {
         <CategoryTitle>{category.name}</CategoryTitle>
         <Container>
           {category.widgets.map((widget) => (
-            <Widget key={widget.id} widget={widget} />
+            <Widget key={widget.id} widget={widget} categoryId={category.id} />
           ))}
           <WidgetCard>
             <AddButton onClick={() => setShowAddWidgetModal(true)}>

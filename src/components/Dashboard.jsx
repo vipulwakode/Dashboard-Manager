@@ -13,14 +13,25 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+const CategoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
 const Dashboard = () => {
   const categories = useSelector((state) => state.dashboard.categories);
+  console.log(categories, "categories from redux store");
   return (
     <Container>
       <Header />
-      {categories.map((category) => (
-        <Category category={category} />
-      ))}
+      <CategoryContainer>
+        {" "}
+        {categories.map((category) => (
+          <Category category={category} />
+        ))}
+      </CategoryContainer>
+
       <Footer />
     </Container>
   );

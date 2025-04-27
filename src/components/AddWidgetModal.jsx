@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FiX } from "react-icons/fi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addWidget } from "../store/dashboardSlice";
 
 const Modal = styled.div`
   position: fixed;
@@ -104,6 +105,7 @@ const Button = styled.button`
 
 const AddWidgetModal = ({ categoryId, onClose }) => {
   const categories = useSelector((state) => state.dashboard.categories);
+  const dispatch = useDispatch();
   const category = categories.find((cat) => cat.id === categoryId);
 
   const handleSubmit = (e) => {
@@ -111,11 +113,16 @@ const AddWidgetModal = ({ categoryId, onClose }) => {
     const widgetName = e.target.elements.widgetName.value;
     const widgetContent = e.target.elements.widgetContent.value;
 
-    console.log("Widget Name:", widgetName);
-    console.log("Widget Content:", widgetContent);
+    dispatch({
+      type: addWidget,
+      payload: { categoryId, widgetName, widgetContent },
+    });
 
+    e.target.elements.widgetName.value = "";
+    e.target.elements.widgetContent.value = "";
     onClose();
   };
+
   return (
     <Modal>
       <ModalWrapper>
