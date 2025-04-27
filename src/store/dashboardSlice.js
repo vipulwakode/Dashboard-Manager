@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialData } from '../data/initialData';
+import { generateUniqueId } from '../utils/helper';
 
 const dashboardSlice = createSlice({
   name: 'dashboard',
@@ -9,11 +10,11 @@ const dashboardSlice = createSlice({
   },
   reducers: {
     addCategory: (state, action) => {
-        const { categoryId, categoryName } = action.payload;
+        const {categoryName, selectedWidgets} = action.payload;
         state.categories.push({
-          categoryId,
-          categoryName,
-          widgets: [],
+          id: generateUniqueId(),
+          name: categoryName,
+          widgets: selectedWidgets,
         });
       },
     addWidget: (state, action) => {
