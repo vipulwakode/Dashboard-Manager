@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Widget from "./widget";
+import Widget from "./Widget";
 import { FaPlus } from "react-icons/fa";
 import AddWidgetModal from "./AddWidgetModal";
 import { useSelector } from "react-redux";
