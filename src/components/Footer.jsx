@@ -16,7 +16,7 @@ const FooterContainer = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>© 2025 Widget Board. All rights reserved.</p>
+      <p>© 2025 Dashboard Manager 📊 Developed with ❤️ by Vipul Wakode</p>
     </FooterContainer>
   );
 };
