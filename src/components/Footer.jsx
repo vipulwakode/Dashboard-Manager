@@ -10,7 +10,7 @@ const FooterContainer = styled.div`
   text-align: center;
   padding: 1rem;
   font-size: 1rem;
-  height: 5rem;
+  height: 4.5rem;
 `;
 
 const Footer = () => {

@@ -13,12 +13,18 @@ const Container = styled.div`
   gap: 1rem;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const CategoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 `;
 
 const ButtonWrapper = styled.div`

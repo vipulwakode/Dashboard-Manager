@@ -14,6 +14,10 @@ const SearchBarContainer = styled.div`
   padding: 0 0.5rem;
   gap: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 
 const Input = styled.input`
@@ -23,6 +27,7 @@ const Input = styled.input`
   outline: none;
   color: black;
   font-size: 1rem;
+  width: 100%;
 `;
 
 const SearchIcon = styled(FaSearch)`

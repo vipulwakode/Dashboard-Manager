@@ -9,11 +9,24 @@ const Container = styled.div`
   padding: 1rem;
   align-items: center;
   gap: 2rem;
+  @media (max-width: 576px) {
+    gap: 1rem;
+  }
 `;
+
+const Title = styled.h1`
+  margin: 0;
+  font-size: 2rem;
+  @media (max-width: 576px) {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+`;
+
 const Header = () => {
   return (
     <Container>
-      <h1>Dashboard</h1>
+      <Title>Dashboard</Title>
       <SearchBar placeholder="Search widgets" />
     </Container>
   );
