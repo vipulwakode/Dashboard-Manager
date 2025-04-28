@@ -13,6 +13,11 @@ const lightTheme = {
   buttonBackground: "#1e90ff",
   buttonHover: "#1c86ee",
   searchBarBackground: "#fff",
+  modalBackground: "#fff",
+  inputBackground: "#fff",
+  borderColor: "#ccc",
+  selectedInputBackground: "#EDF5E3",
+  selectedInputHoverBackground: "#F7F7F7",
 };
 
 const darkTheme = {
@@ -26,6 +31,11 @@ const darkTheme = {
   buttonBackground: "#555",
   buttonHover: "#777",
   searchBarBackground: "rgb(60, 60, 60)",
+  modalBackground: "rgb(60, 60, 60)",
+  inputBackground: "rgb(80, 80, 80)",
+  borderColor: "rgb(100, 100, 100)",
+  selectedInputBackground: "rgb(100, 100, 100)",
+  selectedInputHoverBackground: "rgb(70, 70, 70)",
 };
 
 const ThemeWrapper = ({ children }) => {

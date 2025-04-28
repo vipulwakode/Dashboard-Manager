@@ -19,7 +19,7 @@ const Modal = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  background-color: #f7f7f7;
+  background-color: ${({ theme }) => theme.modalBackground};
   border-radius: 8px;
   width: 100%;
   max-width: 500px;
@@ -34,12 +34,12 @@ const ModalHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid ${({ theme }) => theme.borderColor};
 `;
 
 const CloseIcon = styled(FiX)`
   cursor: pointer;
-  color: #333;
+  color: ${({ theme }) => theme.closeIconColor};
   font-size: 1.5rem;
 `;
 
@@ -52,8 +52,10 @@ const ModalContent = styled.div`
 
 const Input = styled.input`
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.borderColor};
+  background-color: ${({ theme }) => theme.inputBackground};
   outline: none;
+  color: ${({ theme }) => theme.bodyText};
   border-radius: 0.5rem;
   font-size: 1rem;
 `;
@@ -71,11 +73,15 @@ const WidgetListItem = styled.div`
   gap: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background: ${({ checked }) => (checked ? "#EDF5E3" : "white")};
-  border: 1px solid #ccc;
+  background: ${({ checked, theme }) =>
+    checked ? theme.selectedInputBackground : theme.inputBackground};
+  border: 1px solid ${({ theme }) => theme.borderColor};
   cursor: pointer;
   &:hover {
-    background-color: ${({ checked }) => (checked ? "#EDF5E3" : "#F7F7F7")};
+    background-color: ${({ checked, theme }) =>
+      checked
+        ? theme.selectedInputBackground
+        : theme.selectedInputHoverBackground};
   }
 `;
 
@@ -86,6 +92,7 @@ const WidgetName = styled.p`
 
 const Checkbox = styled.input`
   cursor: pointer;
+  background-color: ${({ theme }) => theme.inputBackground};
 `;
 
 const ButtonGroup = styled.div`

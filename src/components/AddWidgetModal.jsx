@@ -18,7 +18,7 @@ const Modal = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  background-color: #f7f7f7;
+  background-color: ${({ theme }) => theme.modalBackground};
   border-radius: 8px;
   width: 100%;
   max-width: 500px;
@@ -38,7 +38,7 @@ const ModalHeader = styled.div`
 
 const CloseIcon = styled(FiX)`
   cursor: pointer;
-  color: #333;
+  color: ${({ theme }) => theme.closeIconColor};
   font-size: 1.5rem;
 `;
 
@@ -56,7 +56,9 @@ const Form = styled.form`
 
 const Input = styled.input`
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.borderColor};
+  background-color: ${({ theme }) => theme.inputBackground};
+  color: ${({ theme }) => theme.bodyText};
   outline: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -64,9 +66,11 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.borderColor};
+  background-color: ${({ theme }) => theme.inputBackground};
   border-radius: 4px;
   font-size: 1rem;
+  color: ${({ theme }) => theme.bodyText};
   resize: none;
   outline: none;
 `;
