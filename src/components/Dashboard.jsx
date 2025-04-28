@@ -52,9 +52,30 @@ const AddButton = styled.button`
   }
 `;
 
+const NoCategoriesMessage = styled.div`
+  text-align: center;
+  color: #666;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+`;
+
 const Dashboard = () => {
   const categories = useSelector((state) => state.dashboard.categories);
   const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
+  const searchTerm = useSelector((state) => state.dashboard.searchTerm);
+
+  const filteredCategories = searchTerm
+    ? categories
+        .map((category) => ({
+          ...category,
+          widgets: category.widgets.filter(
+            (widget) =>
+              widget.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              widget.content.toLowerCase().includes(searchTerm.toLowerCase())
+          ),
+        }))
+        .filter((category) => category.widgets.length > 0)
+    : categories;
 
   return (
     <Container>
@@ -65,9 +86,15 @@ const Dashboard = () => {
         </AddButton>
       </ButtonWrapper>
       <CategoryContainer>
-        {categories.map((category) => (
-          <Category category={category} />
-        ))}
+        {filteredCategories.length > 0 ? (
+          filteredCategories.map((category) => (
+            <Category key={category.id} category={category} />
+          ))
+        ) : searchTerm ? (
+          <NoCategoriesMessage>No matching widgets found.</NoCategoriesMessage>
+        ) : (
+          <NoCategoriesMessage>No categories available.</NoCategoriesMessage>
+        )}
       </CategoryContainer>
       {showAddCategoryModal && (
         <AddCategoryModal onClose={() => setShowAddCategoryModal(false)} />
