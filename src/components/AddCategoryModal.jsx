@@ -47,6 +47,7 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  max-height: 80vh;
   gap: 1rem;
 `;
 
@@ -65,6 +66,7 @@ const WidgetListContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  overflow-y: auto;
 `;
 
 const WidgetListItem = styled.div`
