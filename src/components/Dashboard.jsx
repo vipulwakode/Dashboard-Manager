@@ -14,6 +14,8 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.bodyBackground};
+  color: ${({ theme }) => theme.bodyText};
 `;
 
 const CategoryContainer = styled.div`
@@ -38,8 +40,9 @@ const AddButton = styled.button`
   align-items: center;
   gap: 0.25rem;
   justify-content: center;
-  background-color: #007bff;
-  color: white;
+  background-color: ${({ theme }) =>
+    theme.buttonBackground}; /* Dynamic button background */
+  color: ${({ theme }) => theme.buttonText};
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
@@ -48,7 +51,7 @@ const AddButton = styled.button`
   width: 10rem;
   margin-left: 1rem;
   &:hover {
-    background-color: #0056b3;
+    background-color: ${({ theme }) => theme.buttonHover};
   }
 `;
 
@@ -82,7 +85,7 @@ const Dashboard = () => {
       <Header />
       <ButtonWrapper>
         <AddButton onClick={() => setShowAddCategoryModal(true)}>
-          <FaPlus /> Add Category
+          <FaPlus /> New Category
         </AddButton>
       </ButtonWrapper>
       <CategoryContainer>

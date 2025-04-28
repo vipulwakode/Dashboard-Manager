@@ -8,7 +8,7 @@ const SearchBarContainer = styled.div`
   display: flex;
   width: 60%;
   align-items: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.searchBarBackground};
   border-radius: 1rem;
   height: 3rem;
   padding: 0 0.5rem;
@@ -23,9 +23,10 @@ const SearchBarContainer = styled.div`
 const Input = styled.input`
   flex: 1;
   padding: 0.5rem;
+  background-color: ${({ theme }) => theme.searchBarBackground};
   border: none;
   outline: none;
-  color: black;
+  color: ${({ theme }) => theme.bodyText};
   font-size: 1rem;
   width: 100%;
 `;
@@ -38,7 +39,7 @@ const SearchIcon = styled(FaSearch)`
 
 const CloseIcon = styled(FiX)`
   cursor: pointer;
-  color: #333;
+  color: ${({ theme }) => theme.closeIconColor};
   font-size: 1.5rem;
   margin-right: 0.5rem;
 `;

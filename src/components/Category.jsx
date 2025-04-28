@@ -22,13 +22,14 @@ const CategoryContainer = styled.div`
 `;
 
 const CategoryTitle = styled.h2`
+  color: ${({ theme }) => theme.bodyText};
   margin-bottom: 1rem;
 `;
 
 const WidgetCard = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: ${({ theme }) => theme.widgetBackground};
   border-radius: 1rem;
   padding: 1rem;
   z-index: 10;
@@ -43,8 +44,8 @@ const AddButton = styled.button`
   align-items: center;
   gap: 0.25rem;
   justify-content: center;
-  background-color: #007bff;
-  color: white;
+  background-color: ${({ theme }) => theme.buttonBackground};
+  color: ${({ theme }) => theme.buttonText};
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
@@ -52,7 +53,7 @@ const AddButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: ${({ theme }) => theme.buttonHover};
   }
 `;
 

@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import Dashboard from "./components/Dashboard";
 import { createGlobalStyle } from "styled-components";
+import ThemeWrapper from "./components/ThemeWrapper";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -24,8 +25,10 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <Provider store={store}>
-      <GlobalStyle />
-      <Dashboard />
+      <ThemeWrapper>
+        <GlobalStyle />
+        <Dashboard />
+      </ThemeWrapper>
     </Provider>
   );
 }

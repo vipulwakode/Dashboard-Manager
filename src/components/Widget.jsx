@@ -7,15 +7,16 @@ import { useDispatch } from "react-redux";
 const WidgetCard = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: ${({ theme }) => theme.widgetBackground};
   border-radius: 1rem;
   padding: 1rem;
   z-index: 10;
   height: 10rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px ${({ theme }) => theme.widgetBoxShadow};
 `;
 
 const WidgetName = styled.h2`
+  color: ${({ theme }) => theme.bodyText};
   font-size: 1.5rem;
   margin: 0;
 `;
@@ -31,7 +32,7 @@ const Header = styled.div`
 
 const CloseIcon = styled(FiX)`
   cursor: pointer;
-  color: #333;
+  color: ${({ theme }) => theme.closeIconColor};
   font-size: 1.5rem;
 `;
 

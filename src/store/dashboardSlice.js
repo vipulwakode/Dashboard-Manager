@@ -7,6 +7,7 @@ const dashboardSlice = createSlice({
   initialState: {
     categories: initialData.categories,
     searchTerm: '',
+    theme: 'light', 
   },
   reducers: {
     addCategory: (state, action) => {
@@ -40,9 +41,12 @@ const dashboardSlice = createSlice({
     },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
+    },
+    toggleTheme: (state) => {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
     }
   }
 });
 
-export const { addCategory,addWidget, removeWidget, setSearchTerm } = dashboardSlice.actions;
+export const { addCategory,addWidget, removeWidget, setSearchTerm , toggleTheme} = dashboardSlice.actions;
 export default dashboardSlice.reducer;
