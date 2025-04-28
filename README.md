@@ -1,12 +1,38 @@
-# React + Vite
+# Dashboard Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- **Dynamic Widget Management**: Add, edit, and remove widgets within categories.
+- **Light and Dark Themes**: Toggle between light and dark modes for a better user experience.
+- **Responsive Design**: Fully responsive layout for desktop and mobile devices.
+- **Search Functionality**: Search widgets dynamically across categories.
+- **State Management**: Powered by **Redux Toolkit** for efficient state management.
+- **Styled Components**: Theme-based styling using `styled-components`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Stack & Tools
 
-## Expanding the ESLint configuration
+- **React**: Frontend library for building user interfaces.
+- **Vite**: Fast build tool for modern web projects.
+- **Redux Toolkit**: For state management
+- **Styled Components**: CSS-in-JS for styling.
+- **React Icons**: Icon library for modern UI components.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setting Up
+
+### 1. Clone/Download the Repository
+
+### 2. Install Dependencies:
+
+`$ npm install`
+
+### 3. Start the development server:
+
+`$ npm run dev`
+
+### 4. Open the Application:
+
+`http://localhost:5173/`
+
+### 5. Deployed link
+
+`https://bejewelled-llama-7156eb.netlify.app/`
